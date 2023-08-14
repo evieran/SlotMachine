@@ -1,3 +1,23 @@
+"""
+Slot Machine Simulator
+
+This module simulates a basic slot machine game where the player can bet on different lines and spin the slot machine. The game includes the following features:
+
+- Constants for maximum and minimum bets, number of lines, rows, and columns.
+- A predefined set of symbols with associated counts and values.
+- A function to check the winnings based on the symbols, lines, bet, and values.
+
+Constants:
+    MAX_LINES (int): Maximum number of lines to bet on.
+    MAX_BET (int): Maximum bet amount.
+    MIN_BET (int): Minimum bet amount.
+    ROWS (int): Number of rows in the slot machine.
+    COLS (int): Number of columns in the slot machine.
+    symbol_count (dict): A dictionary containing the count of each symbol.
+    symbol_value (dict): A dictionary containing the value of each symbol.
+
+"""
+
 import random
 
 MAX_LINES = 3
@@ -21,7 +41,7 @@ symbol_value = {
     "D": 2
 }
 
-
+#  Calculate and return the total winnings and winning lines based on the slot machine spin.
 def check_winnings(columns, lines, bet, values):
     winnings = 0
     winning_lines = []
@@ -37,7 +57,7 @@ def check_winnings(columns, lines, bet, values):
 
     return winnings, winning_lines
 
-
+# Generate and return a random spin of the slot machine based on the given rows, columns, and symbols.
 def get_slot_machine_spin(rows, cols, symbols):
     all_symbols = []
     for symbol, symbol_count in symbols.items():
@@ -57,7 +77,7 @@ def get_slot_machine_spin(rows, cols, symbols):
 
     return columns
 
-
+# Print the current state of the slot machine's columns, formatted as rows and columns.
 def print_slot_machine(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
@@ -68,7 +88,7 @@ def print_slot_machine(columns):
 
         print()
 
-
+# Prompt the user to deposit an amount greater than 0 and return the entered amount.
 def deposit():
     while True:
         amount = input("What would you like to deposit? $")
@@ -83,7 +103,7 @@ def deposit():
 
     return amount
 
-
+# Prompt the user to enter a valid number of lines to bet on, within the range of 1 to MAX_LINES, and return the entered number.
 def get_number_of_lines():
     while True:
         lines = input(
@@ -99,7 +119,7 @@ def get_number_of_lines():
 
     return lines
 
-
+# Prompt the user to enter a valid bet amount for each line, within the range of MIN_BET to MAX_BET, and return the entered amount.
 def get_bet():
     while True:
         amount = input("What would you like to bet on each line? $")
@@ -114,7 +134,7 @@ def get_bet():
 
     return amount
 
-
+# Execute a single spin of the slot machine, including selecting lines, placing bets, and calculating winnings, and return the net gain or loss.
 def spin(balance):
     lines = get_number_of_lines()
     while True:
@@ -137,7 +157,7 @@ def spin(balance):
     print(f"You won on lines:", *winning_lines)
     return winnings - total_bet
 
-
+# Main function to control the game flow, including depositing money, playing spins, and quitting the game.
 def main():
     balance = deposit()
     while True:
@@ -151,3 +171,4 @@ def main():
 
 
 main()
+
