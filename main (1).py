@@ -1,7 +1,8 @@
 """
 Slot Machine Simulator
 
-This module simulates a basic slot machine game where the player can bet on different lines and spin the slot machine. The game includes the following features:
+This module simulates a basic slot machine game where the player can bet on different lines and spin the slot machine. 
+The game includes the following features:
 
 - Constants for maximum and minimum bets, number of lines, rows, and columns.
 - A predefined set of symbols with associated counts and values.
