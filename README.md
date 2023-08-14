@@ -1,7 +1,5 @@
 # Slot Machine
-
-## Project Overview
-Objective: Build a text-based slot machine.
+This is a Python project: Build a text-based slot machine.
 ## User Interaction
 The user will deposit a certain amount of money, bet on one, two, or three lines of the slot machine, and play until they want to cash out or run out of money.
 
